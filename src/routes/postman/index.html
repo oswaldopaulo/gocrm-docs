@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles/global.css">
+    <link rel="stylesheet" href="styles.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <title>API SNDesk - rotas</title>
+</head>
+    <body>
+        <header class="py-3 mb-3 border-bottom header">
+            <div class="container-fluid d-flex justify-content-between align-items-center">
+                <div class="logo d-flex justify-content-center flex-grow-1">
+                    <img src="../../assets/sndesklogo.png" alt="Logo do SNDesk" class="img-fluid logo-img">
+                </div>
+        
+                <button class="hamburger-menu d-block d-md-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <div class="container mt-4" style="background-color: #EBEFF3;">
+            <div class="row" style="background-color: #EBEFF3;">
+
+                <!-- Menu à esquerda -->
+                <div class="col-md-3 nav-menu mobile-menu" id="nav-menu">
+
+                    <ul class="list-group menu">
+                        <li class="list-group-item borda"><a href="../../index.html" class="nav-link item px-4">Dashboard</a></li>
+                        <li class="list-group-item borda">
+                            <a class="nav-link collapsed item px-4" data-toggle="collapse" 
+                            aria-expanded="false" href="../boas-praticas/index.html">
+                            Boas práticas
+
+                
+                        </a>
+                    
+                        </li>
+
+                        <li class="list-group-item borda">
+                            <a class="nav-link collapsed item px-4" data-toggle="collapse" 
+                            aria-expanded="false" href="../criando-token/index.html">
+                            Criando Token
+                           
+                        </a>
+                        
+                           
+                        </li>
+
+                        <li class="list-group-item borda">
+                            <a class="nav-link collapsed item px-4" data-toggle="collapse" 
+                            aria-expanded="false" href="../erros/index.html">Erros comums</a>
+                        
+                        
+                        </li>
+
+                     
+
+                        <li class="list-group-item borda">
+                            <a class="nav-link item px-4" href="#">Postman</a>
+                        </li>
+
+                    
+                        </a>
+                        
+                        </li>
+
+                        <li class="list-group-item borda">
+                            <a class="nav-link item px-4" href="../rotas/index.html">Rotas</a>
+                        </li>
+                    </ul>
+                </div>
+                <main class="col-md-9 cardPrincipal">
+                    <div class="card-body main-container">
+                        <div class="row">
+                          <div class="col-11">
+                            <h1><b>Como testar</b></h1>
+                          </div>
+            
+                          <div class="col-1">
+                            <img class="minilogo" src="../../assets/logo-miniatura.png" alt="logo miniatura sndesk">
+                          </div>
+                        </div>
+          
+                      </div>
+                    <div class="card-body mt-3">
+                        <div class="container">
+                            <h2>Introdução</h2>
+
+                            <p>
+                               Para você começar a testar nossa API precisamos seguir alguns simples passos, caso ainda não tenha seu token de api
+                                <a href="../criando-token/">Clique aqui!</a>
+                            </p>
+                            <button class="btn btn-secondary ">
+                                <a class="text-white" target="_blank" href="https://www.postman.com/sndesk/workspace/sndesk-api/collection/32883285-218bd5e4-834c-485b-aa2b-fb8df8432e59?action=share&creator=32883285">SNDesk Postman</a>
+                            </button>
+                        </div>
+
+                        <div class="container">
+                            <h2>Postman APP</h2>
+
+                            <p>
+                                Se você deseja usar o aplicativo do Postman, é possível baixar a collection através do link abaixo. Após obter o link de download, basta clicar nele para baixar
+                                o arquivo de coleção. Em seguida, abra o Postman e importe o arquivo de coleção clicando em "Import",
+                                selecionando "Import File", navegando até o local onde o arquivo está salvo e clicando em "Open".
+                                A coleção será então listada na barra lateral esquerda do Postman, onde você poderá expandi-la
+                                para visualizar e executar as requisições disponíveis.
+                            </p>
+                                <a download="SNDesk-collection" href="../../assets/files/SNDesk%20API.postman_collection.json">Baixar collection</a>
+
+                        </div>
+
+                        <div class="container">
+                            <h2>Configurando Enviroment</h2>
+
+                            <p>
+                                Ao iniciar o Postman, o passo inicial é configurar a sua <strong>base_url</strong> para que corresponda à de sua empresa. Isso garantirá que todas as suas solicitações sejam direcionadas corretamente aos recursos da sua organização.
+                            </p>
+                            <img src="../../assets/teste-1.png" />
+                        </div>
+                        <div class="container">
+                            <h2>Configurando autorizações</h2>
+
+                            <p>
+                                Após configurar as rotas, atualize as informações na aba de Autorização,
+                                no SNDesk utilizamos Oath 2. Se o campo "Header Prefix" estiver vazio,
+                                preencha-o com "Bearer" para garantir que o cabeçalho de autorização seja configurado corretamente.
+                            </p>
+                            <img src="../../assets/teste-2.png" />
+                            <p>
+                                Após isso coloque o token de sua empresa no campo "Token", caso ainda não tenha o token acesse
+                                <a href="../criando-token/index.html">Conseguindo token SNDesk</a>
+                            </p>
+                        </div>
+                    </div>
+
+                </main>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script src="../../js/script.js"></script>

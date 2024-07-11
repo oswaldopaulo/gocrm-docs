@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles/global.css">
+    <link rel="stylesheet" href="styles.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <title>API SNDesk - rotas</title>
+</head>
+    <body>
+        <header class="py-3 mb-3 border-bottom header">
+            <div class="container-fluid d-flex justify-content-between align-items-center">
+                <div class="logo d-flex justify-content-center flex-grow-1">
+                    <img src="../../assets/sndesklogo.png" alt="Logo do SNDesk" class="img-fluid logo-img">
+                </div>
+        
+                <button class="hamburger-menu d-block d-md-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                    </svg>
+                </button>
+            </div>
+        </header>
+        <div class="container mt-4" style="background-color: #EBEFF3;">
+            <div class="row" style="background-color: #EBEFF3;">
+
+                <!-- Menu à esquerda -->
+                <div class="col-md-3 nav-menu mobile-menu" id="nav-menu">
+
+                    <ul class="list-group menu">
+                        <li class="list-group-item borda"><a href="../../index.html" class="nav-link item px-4">Dashboard</a></li>
+
+
+                        <li class="list-group-item borda">
+                            <a class="nav-link collapsed item px-4" data-toggle="collapse" 
+                            aria-expanded="false" href="../boas-praticas/index.html">
+                            Boas práticas
+
+                
+                        </a>
+                    
+                        </li>
+
+                        <li class="list-group-item borda">
+                            <a class="nav-link collapsed item px-4" data-toggle="collapse" 
+                            aria-expanded="false" href="../criando-token/index.html">
+                            Criando Token
+                           
+                        </a>
+                        
+                           
+                        </li>
+
+                        <li class="list-group-item borda">
+                            <a class="nav-link collapsed item px-4" data-toggle="collapse" 
+                            aria-expanded="false" href="../erros/index.html">Erros comums</a>
+                        
+                        
+                        </li>
+
+                     
+
+                        <li class="list-group-item borda">
+                            <a class="nav-link item px-4" href="../postman/index.html">Postman</a>
+                        </li>
+
+                    
+                        </a>
+                        
+                        </li>
+
+                        <li class="list-group-item borda">
+                            <a class="nav-link item px-4" href="../index.html">Rotas</a>
+                        </li>
+                    </ul>
+                </div>
+                <main class="col-md-9 cardPrincipal">
+                    <div class="card-body main-container">
+                        <div class="row">
+                          <div class="col-11">
+                            <h1><b>SNDesk rotas</b></h1>
+                          </div>
+            
+                          <div class="col-1">
+                            <img class="minilogo" src="../../assets/logo-miniatura.png" alt="logo miniatura sndesk">
+                          </div>
+                        </div>
+          
+                      </div>
+        
+                    <div class="card-body mt-3">
+                        <div>
+
+                            <p>
+                                Clique nos links abaixo para verificar os campos obrigatórios
+                            </p>
+
+                        </div>
+                        <div class="cardBox">
+
+
+                            <div class="card-header border-bottom"  id="create-client-header">
+                                <div>
+                                    <h2 class="text-success">POST - clientes</h2>
+                                    <p>
+                                        https://SEUSUBDOMINIO.sndesk.com.br/api/newuser
+                                    </p>
+                                </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"/>
+                                    </svg>
+                            </div>
+                            <div class="closed" id="create-clients-body">
+                             <ul class="fieldsList">
+                                 <h3>Campos requeridos</h3>
+                                 <li>
+                                     <strong>nome:</strong>
+                                     <span>String</span>
+                                 </li>
+                                 <li>
+                                     <strong>contato_email:</strong>
+                                     <span>String</span>
+                                 </li>
+                                 <li>
+                                     <strong>contato_nome:</strong>
+                                     <span>String</span>
+                                 </li>
+                                 <li>
+                                     <strong>Token:</strong>
+                                     <span>String</span>
+                                 </li>
+                        
+                             </ul>
+                             <ul class="fieldsList">
+                                 <h3>Todos os campos</h3>
+                                 <li>
+                                     <strong>nome:</strong>
+                                     <span>String</span>
+                                 </li>
+                                 <li>
+                                     <strong>token:</strong>
+                                     <span>String</span>
+                                 </li>
+                                 <li>
+                                     <strong>fone:</strong>
+                                     <span>String</span>
+                                 </li>
+                                 <li>
+                                     <strong>celular:</strong>
+                                     <span>String</span>
+                                 </li>
+                                 <li>
+                                    <strong>rua:</strong>
+                                    <span>String</span>
+                                </li>
+                                <li>
+                                    <strong>numero:</strong>
+                                    <span>Number</span>
+                                </li>
+                                <li>
+                                    <strong>bairro:</strong>
+                                    <span>String</span>
+                                </li>
+                                <li>
+                                    <strong>cep_end:</strong>
+                                    <span>String</span>
+                                </li>
+                                <li>
+                                    <strong>cidade:</strong>
+                                    <span>String</span>
+                                </li>
+                                <li>
+                                    <strong>uf:</strong>
+                                    <span>String</span>
+                                </li>
+                                <li>
+                                    <strong>cpf_cnpj:</strong>
+                                    <span>String</span>
+                                </li>
+                                <li>
+                                    <strong>contato_email:</strong>
+                                    <span>String</span>
+                                </li>
+                                <li>
+                                    <strong>contato_nome:</strong>
+                                    <span>Array</span>
+                                </li>
+                                <li>
+                                    <strong>contato_email.*:</strong>
+                                    <span>String</span>
+                                </li>
+                                <li>
+                                    <strong>contato_nome.*:</strong>
+                                    <span>String</span>
+                                </li>
+                                <li>
+                                    <strong>contato_ramal:</strong>
+                                    <span>Array</span>
+                                </li>
+                                <li>
+                                    <strong>contato_ramal.*:</strong>
+                                    <span>String</span>
+                                </li>
+                                <li>
+                                    <strong>contato_telefone:</strong>
+                                    <span>Array</span>
+                                </li>
+                                <li>
+                                    <strong>contato_telefone.*:</strong>
+                                    <span>String</span>
+                                </li>
+                                <li>
+                                    <strong>endereco_descricao:</strong>
+                                    <span>Array</span>
+                                </li>
+                                <li>
+                                    <strong>endereco_descricao.*:</strong>
+                                    <span>String</span>
+                                </li>
+                                <li>
+                                    <strong>endereco_cep:</strong>
+                                    <span>Array</span>
+                                </li>
+                                <li>
+                                    <strong>endereco_cep.*:</strong>
+                                    <span>String</span>
+                                </li>
+                             </ul>
+                             
+                             <div class="apiResponses d-flex flex-column ">
+                                 <h3>Retornos HTTP:</h3>
+                                 <h4 class="text-success">200</h4>
+                                 <img src="../../assets/scrn_create_clientes.png" alt="Retorno da chamada">
+                             </div>
+                            </div>
+                         </div>
+                         <div class="cardBox">
+
+
+                            <div class="card-header border-bottom"  id="get-client-header">
+                                <div>
+                                    <h2 class="text-success">GET - clientes</h2>
+                                    <p>
+                                        https://SEUSUBDOMINIO.sndesk.com.br/api/:query:?type=:query:
+                                    </p>
+                                </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"/>
+                                    </svg>
+                            </div>
+                            <div class="closed" id="get-clients-body">
+                             <ul class="fieldsList">
+                                 <h3>Query params</h3>
+                                 <li>
+                                     <strong>type:</strong>
+                                     <span>
+                                        String
+                                    </span>
+                                 </li>
+                                 <li>
+                                    <strong>query:</strong>
+                                    <span>String</span>
+                                 </li>
+                             </ul>
+                             <p>Os valores do campo type podem ser: <strong>email, id, cpf_cnpj</strong>, Permitindo fazer buscas especificas no banco de dados.</p>
+                             <p>Caso type seja omitido a busca padrão é por email, com retorno variado de local ou bling para onde o usuário está cadastrado.</p>
+                             <div class="apiResponses d-flex flex-column ">
+                                 <h3>Retornos HTTP:</h3>
+                                 <h4 class="text-success">200</h4>
+                                 <img src="../../assets/scrn_get_clientes.png" alt="Retorno da chamada">
+                             </div>
+                            </div>
+                         </div>
+                         <div class="cardBox">
+                             <div id="create-calling-header" class="card-header border-bottom">
+                                 <div>
+                                    <h2 class="text-success">POST - chamados</h2>
+                                    <p>
+                                        https://SEUSUBDOMINIO.sndesk.com.br/api/novochamado
+                                    </p>
+                                 </div>
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"/>
+                                </svg>
+                             </div>
+                             <div class="closed" id="create-calling-body">
+                              <ul class="fieldsList">
+                                  <h3>Campos requeridos</h3>
+                                  <li>
+                                      <strong>token:</strong>
+                                      <span>String</span>
+                                  </li>
+                                  <li>
+                                      <strong>descricao:</strong>
+                                      <span>String</span>
+                                  </li>
+                                  <li>
+                                      <strong>assunto:</strong>
+                                      <span>String</span>
+                                  </li>
+                                  <li>
+                                     <strong>anexos:</strong>
+                                     <span>File</span>
+                                 </li>
+                              </ul>
+                              <ul class="fieldsList">
+                                  <h3>Todos os campos</h3>
+                                  <li>
+                                      <strong>nome:</strong>
+                                      <span>String</span>
+                                  </li>
+                                  <li>
+                                    <strong>email:</strong>
+                                      <span>String</span>
+                                  </li>
+                                  <li>
+                                    <strong>idcliente:</strong>
+                                      <span>String</span>
+                                  </li>
+                                  <li>
+                                    <strong>cpf_cnpj:</strong>
+                                    <span>String</span>
+                                  </li>
+                                  <li>
+                                      <strong>Contato_email:</strong>
+                                      <span>String</span>
+                                  </li>
+                                  <li>
+                                      <strong>Contato_nome:</strong>
+                                      <span>String</span>
+                                  </li>
+                                  <li>
+                                      <strong>Token:</strong>
+                                      <span>String</span>
+                                  </li>
+                              </ul>
+
+                              <p>Usamos como parâmetro para identificar o usuário em ordem os campos: email, idcliente, cpf_cnpj, na ausência resultará em um erro.</p>
+                              
+                              <div class="apiResponses d-flex flex-column ">
+                                  <h3>Retornos HTTP:</h3>
+                                  <h4 class="text-success">200</h4>
+                                  <img src="../../assets/scrn_create_chamados.png" alt="Retorno da chamada">
+                              </div>
+              
+                             </div>
+                          </div>
+                          <div class="cardBox">
+                            <div id="get-events-header" class="card-header border-bottom">
+                                <div>
+                                   <h2 class="text-success">GET - Agenda</h2>
+                                   <p>
+                                       https://SEUSUBDOMINIO.sndesk.com.br/api/events/{id}
+                                   </p>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                                   <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"/>
+                               </svg>
+                            </div>
+                            <div class="closed" id="get-events-body">
+                             <ul class="fieldsList">
+                                 <h3>Query Params</h3>
+                                 <li>
+                                     <strong>id:</strong>
+                                     <span>String</span>
+                                 </li>
+                             </ul>
+
+                             <p>Utilizamos o ID do chamado como parametro de busca</p>
+                             
+                             <div class="apiResponses d-flex flex-column ">
+                                 <h3>Retornos HTTP:</h3>
+                                 <h4 class="text-success">200</h4>
+                                 <img src="../../assets/scrn_get_events.png" alt="Retorno da chamada">
+                             </div>
+                                <h3>Retornos</h3>
+                                <p>
+                                    Retorna informações de cada agenda para o chamado, contendo dados como: <b>idgoogle</b> onde verifica se a agenda está conectada ao Google.
+                                </p>
+                                <p>
+                                    Também contém o campo <b>idfilhos</b> onde verifica se o chamado é um chamado filho, ou seja, se este chamado está relacionado a outro chamado principal.
+                                </p>
+                            </div>
+                         </div>
+                         <div class="cardBox">
+                            <div id="get-tec-header" class="card-header border-bottom">
+                                <div>
+                                   <h2 class="text-success">GET - Técnico</h2>
+                                   <p>
+                                       https://SEUSUBDOMINIO.sndesk.com.br/api/tecnico/{id}
+                                   </p>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                                   <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"/>
+                               </svg>
+                            </div>
+                            <div class="closed" id="get-tec-body">
+                             <ul class="fieldsList">
+                                 <h3>Query Params</h3>
+                                 <li>
+                                     <strong>id:</strong>
+                                     <span>String</span>
+                                 </li>
+                             </ul>
+
+                             <p>Utilizamos o ID do chamado como parametro de busca</p>
+                             
+                             <div class="apiResponses d-flex flex-column ">
+                                 <h3>Retornos HTTP:</h3>
+                                 <h4 class="text-success">200</h4>
+                                 <img src="../../assets/scrn_get_tecnicos.png" alt="Retorno da chamada">
+                             </div>
+                             <p>Retorna o técnico responsável pelo chamado</p>
+                            </div>
+                         </div>
+
+                         <div class="cardBox">
+                            <div class="card-header border-bottom"  id="get-statuslist-header">
+                                <div>
+                                    <h2 class="text-success">GET - Status</h2>
+                                    <p>
+                                        https://SEUSUBDOMINIO.sndesk.com.br/api/statuslista?ids[i]={id}
+                                    </p>
+                                </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"/>
+                                    </svg>
+                            </div>
+                            <div class="closed" id="get-statuslist-body">
+                                <ul class="fieldsList">
+                                    <h3>Query Params</h3>
+                                    <li>
+                                        <strong>ids:</strong>
+                                        <span>Array</span>
+                                    </li>
+                                </ul>
+   
+                                <p>Utilizamos uma lista de IDs dos chamados como parametro de busca</p>
+                                
+                                <div class="apiResponses d-flex flex-column ">
+                                    <h3>Retornos HTTP:</h3>
+                                    <h4 class="text-success">200</h4>
+                                    <img src="../../assets/scrn_get_statuslist.png" alt="Retorno da chamada">
+                                </div>
+                                <p>Retorna o ID do status e o ID do chamado, nome do status e o código hexadecimal da cor do status</p>
+                               </div>
+                         </div>
+
+
+                         <!-- ================= -->
+                         <div style="margin-top: 40px">
+                            <p>
+                                Para testes e maiores informações acesse nosso repositório no Postman.
+                                <a  href="https://www.postman.com/sndesk/workspace/sndesk-api/collection/32883285-218bd5e4-834c-485b-aa2b-fb8df8432e59?action=share&creator=32883285" target="_blank" style="text-decoration-line: none!important;">
+                                    SNDesk Postman
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script src="../../js/script.js"></script>

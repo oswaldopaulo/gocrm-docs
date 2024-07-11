@@ -1,0 +1,408 @@
+{
+	"info": {
+		"_postman_id": "218bd5e4-834c-485b-aa2b-fb8df8432e59",
+		"name": "SNDesk API",
+		"description": "# 🚀 Introdução\n\nBem-vindo ao SNDesk Developers!\n\nNeste repositório, você encontrará toda a documentação essencial para a integrtação com o SNDesk. Através de nossa API, é possível acessar as funcionalidades do nosso sistema que atendem às demandas de sua empresa e clientes. Desenvolvida conforme o padrão REST, permitindo o uso dos métodos GET, POST, PUT, PATCH e DELETE, com segurança da autentificação OAuth 2.0. Esta documentação esta organizada afim de oferecer detalhes sobre o SNDesk, explicar como pode ser feito seu uso.\n\n## O que é o SNDesk\n\nO SNDesk é uma plataforma completa de gerenciamento de suporte e atendimento ao cliente, oferecendo gestão de chamados, portal do cliente, automação de processos e relatórios detalhados. Com ele, empresas de todos os tamanhos podem centralizar e organizar suas solicitações de suporte, atribuí-las a técnicos específicos e acompanhar o status em tempo real. O portal do cliente permite aos clientes enviar e acompanhar seus próprios chamados, fornecendo feedback sobre o atendimento recebido. A automação ajuda a simplificar processos repetitivos, enquanto os relatórios fornecem insights valiosos para melhorar o desempenho do suporte. Com integrações e atualizações regulares, o SNDesk está sempre evoluindo para atender às necessidades dos clientes e garantir uma experiência excepcional.\n\n## Padrão REST\n\nNo SNDesk usamos um padrão de arquitetura para a API chamada de REST.\n\nO REST abstrai os detalhes técnicos da implementação dos componentes e a estrutura de protocolo, enfocando nas funções que estes componentes exercem, nas normas para sua interação e na maneira como interpretam elementos de dados relevantes. Portanto, para solicitar, atualizar ou enviar dados ao sistema, o usuário deve efetuar um pedido HTTP a um endpoint específico. Em seguida, esse endpoint da API responde, informando sobre o estado atual do recurso solicitado. Esta resposta é enviada através de HTTP, utilizando o formato JSON para estruturar a mensagem.\n\nCada requisição consiste em um método HTTP, um Header, uma URI e um Body que são explicados a seguir:\n\nO método HTTP diferencia a ação que o usuário deseja realizar pela API, sendo eles:\n\n- **GET:** Ação para obter uma ou mais entidades\n    \n- **POST:** Ação para criar uma entidade ou executar uma ação\n    \n- **PUT:** Ação para atualizar todos os dados de uma entidade\n    \n- **PATCH:** Ação para atualizar parcialmente os dados de uma entidade\n    \n- **DELETE:** Ação para remover uma entidade\n    \n- **Header:** É o cabeçalho da requisição, as informações enviadas no header podem ser utilizadas para o servidor interpretar a requisição.  \n    **URI:** Define o caminho onde a requisição irá ocorrer, por exemplo, em uma requisição para obtenção dos dados de produtos, a URI seria: /Api/v3/produtos.  \n    **Body:** É o corpo da requisição, nele são informados os dados que serão enviados para o sistema e também são retornadas as informações da resposta de uma requisição.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32883285",
+		"_collection_link": "https://www.postman.com/sndesk/workspace/sndesk-api/collection/32883285-218bd5e4-834c-485b-aa2b-fb8df8432e59?action=share&source=collection_link&creator=32883285"
+	},
+	"item": [
+		{
+			"name": "Gerando o token",
+			"item": [],
+			"description": "- Entre em sua conta de adminstrador do SNDesk e acesse o painel **ADMINISTRADOR->Configurações->Minha Empresa**\n    \n\n<img src=\"https://content.pstmn.io/c4185f1b-8b29-4a6a-b063-f247f92e1373/U2NyZWVuc2hvdF80LnBuZw==\">\n\n[https://SEUDOMINIO.sndesk.com.br/minhaempresa](https://suaempresa.sndesk.com.br/minhaempresa)\n\n- Clique em **+Adicionar Token**\n    \n\n<img src=\"https://content.pstmn.io/ad75cac3-8309-43d0-a075-be196ee48566/U2NyZWVuc2hvdF81LnBuZw==\">\n\n- **Escolha se é um token para abertura de chamados ou criação de usuario/cliente ou de ambos.**\n    \n\n<img src=\"https://content.pstmn.io/c2b2d284-528f-456e-a584-8b3f083365b1/U2NyZWVuc2hvdF82LnBuZw==\" alt=\"\">\n\n- Salve e copie o token para sua aplicação."
+		},
+		{
+			"name": "Criação de Clientes",
+			"item": [
+				{
+					"name": "Novo usuario/cliente",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "contato_email[1]",
+									"value": "usuario@sndesk.com.br",
+									"type": "text"
+								},
+								{
+									"key": "nome",
+									"value": "nome",
+									"type": "text"
+								},
+								{
+									"key": "contato_nome[1]",
+									"value": "Nome do Usuario",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/newuse",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"newuse"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Resposta de sucesso",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								}
+							],
+							"cookie": [],
+							"body": "    \"cliente\": {\n        \"id\": 1169,\n        \"email\": \"usuario@sndesk.com.br\"\n    }\n}"
+						},
+						{
+							"name": "Erro Token",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.getpostman.com/me",
+									"protocol": "https",
+									"host": [
+										"api",
+										"getpostman",
+										"com"
+									],
+									"path": [
+										"me"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"token\": \"token não autorizado para registro\"\n    }\n}"
+						},
+						{
+							"name": "Erro Campo Obrigatorio",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.getpostman.com/me",
+									"protocol": "https",
+									"host": [
+										"api",
+										"getpostman",
+										"com"
+									],
+									"path": [
+										"me"
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"nome\": [\n            \"O campo nome é obrigatório.\"\n        ],\n        \"contato_email\": [\n            \"O campo contato email é obrigatório.\"\n        ],\n        \"contato_nome\": [\n            \"O campo contato nome é obrigatório.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Erro Email existente",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"contato_email.1\": [\n            \"O campo contato_email.1 já está sendo utilizado.\"\n        ]\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "O endpoint {{sua base url}}**/api/newuser** cria um novo usuario cliente.\n\n# Campos requeridos\n\n- **nome:** String\n    \n- **contato_email:** String\n    \n- **contato_nome:** String\n    \n- **Token:** String\n    \n\n  \n\n## Todos os Campos\n\n- **nome:** String\n    \n- **token:** String\n    \n- **fone:** String\n    \n- **celular:** String\n    \n- **rua:** String\n    \n- **numero:** Number\n    \n- **bairro:** String\n    \n- **cep_end:** String\n    \n- **cidade:** String\n    \n- **uf:** String\n    \n- **cpf_cnpj:** String\n    \n- **contato_email:** String\n    \n- **contato_nome:** Array\n    \n- **contato_email.\\*:** String\n    \n- **contato_nome.\\*:** String\n    \n- **contato_ramal:** Array\n    \n- **contato_ramal.\\*:** String\n    \n- **contato_telefone:** Array\n    \n- **contato_telefone.\\*:** String\n    \n- **endereco_descricao:** Array\n    \n- **endereco_descricao.\\*:** String\n    \n- **endereco_cep:** Array\n    \n- **endereco_cep.\\*:** String"
+		},
+		{
+			"name": "Chamados",
+			"item": [
+				{
+					"name": "{{base_url}}/api/novochamado",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "oswaldo.paulo@gmail.com",
+									"description": "required (email cliente)",
+									"type": "text"
+								},
+								{
+									"key": "descricao",
+									"value": "Teste API adfafafasfas",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "assunto",
+									"value": "Teste API",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "anexos[]",
+									"description": "Opcional\n",
+									"type": "file",
+									"src": [
+										"/C:/Users/oswal/Documents/Aposte online na Mega-Sena 2562.pdf",
+										"/C:/Users/oswal/Documents/raide.txt"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/novochamado",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"novochamado"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Resposta de sucesso Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"chamado\": 28167\n}"
+						},
+						{
+							"name": "Erro Token Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"token\": \"token não autorizado para registro\"\n    }\n}"
+						},
+						{
+							"name": "Erro Campo Obrigatorio Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"nome\": [\n            \"O campo nome é obrigatório.\"\n        ],\n        \"contato_email\": [\n            \"O campo contato email é obrigatório.\"\n        ],\n        \"contato_nome\": [\n            \"O campo contato nome é obrigatório.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Erro Email nao existe",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.getpostman.com/me",
+									"protocol": "https",
+									"host": [
+										"api",
+										"getpostman",
+										"com"
+									],
+									"path": [
+										"me"
+									]
+								}
+							},
+							"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": {\n        \"nome\": [\n            \"O campo nome é obrigatório.\"\n        ],\n        \"contato_email\": [\n            \"O campo contato email é obrigatório.\"\n        ],\n        \"contato_nome\": [\n            \"O campo contato nome é obrigatório.\"\n        ]\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "Endpoint {{base url}}/api/novochamado\n\n# Campos requeridos\n\n- **token:** String\n    \n- **email:** String\n    \n- **descricao:** String\n    \n- **assunto:** String\n    \n- **anexos:** File\n    \n\n  \n\n## Todos os Campos\n\n- **nome:** String\n    \n- **Contato_email:** String\n    \n- **Contato_nome:** String\n    \n- **Token:** String"
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://SEUDOMINO.sndesk.com.br"
+		}
+	]
+}

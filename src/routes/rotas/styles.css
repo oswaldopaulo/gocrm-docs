@@ -1,0 +1,63 @@
+.cardBox {
+    padding: 0.5rem 0.75rem;
+    margin: 3rem 0;
+    margin-bottom: 0;
+    background-color: rgba(0,0,0,.03);
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 2px 2px 5px #c2cdd7;
+
+    @media (max-width: 1080px) {
+        padding: 0.25rem 0.5rem;
+    }
+
+}
+
+.fieldsList {
+    padding: 0.75rem;
+}
+
+.fieldsList li {
+    padding: 0.5rem;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.fieldsList li:nth-child(even) {
+    background-color: rgba(0,0,0,.03);
+}
+
+.fieldsList li strong {
+    min-width: 20%;
+}
+
+.apiResponses {
+    padding: 0.75rem;
+    background-color: #fff;
+}
+
+.apiResponses img {
+    width: 50%;
+
+    @media (max-width: 1080px) {
+        width: 100%;
+    }
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.card-header:hover {
+    opacity: 0.8;
+}
+
+.closed {
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+}
