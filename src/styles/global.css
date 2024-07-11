@@ -31,9 +31,13 @@ h1 {
     margin-bottom: 0.5rem;
     font-weight: 500;
     line-height: 1.2;
-    color: #0F7BDE;
+    color: #02274B;
     font-variant: initial !important;
     font-size: 2rem;
+}
+
+h2, h3{
+    color: #02274B;
 }
 
 
@@ -184,6 +188,10 @@ i{
 
 .nav-menu{
     margin-top: 4%;
+}
+
+a.nav-link.item{
+    color: #02274B;
 }
 
 /* .linha{
