@@ -234,7 +234,10 @@
                              <div class="apiResponses d-flex flex-column ">
                                  <h3>Retornos HTTP:</h3>
                                  <h4 class="text-success">200</h4>
-                                 <img src="../../assets/1_get_exibir_clientes_1.png" alt="Retorno get exibir clientes">
+                                 <img src="../../assets/1_get_exibir_clientes_1.png" alt="Retorno get exibir todos clientes parte 1">
+                                 <img src="../../assets/1_get_exibir_clientes_2.png" alt="Retorno get exibir todos clientes parte 2">
+                                 <img src="../../assets/1_get_exibir_clientes_3.png" alt="Retorno get exibir todos clientes parte 3">
+                                 <img src="../../assets/1_get_exibir_clientes_4.png" alt="Retorno get exibir todos clientes parte 4">
                              </div>
                             </div>
                          </div>
@@ -271,7 +274,10 @@
                              <div class="apiResponses d-flex flex-column ">
                                  <h3>Retornos HTTP:</h3>
                                  <h4 class="text-success">200</h4>
-                                 <img src="../../assets/scrn_get_clientes.png" alt="Retorno da chamada">
+                                 <img src="../../assets/2_get_exibirclient_1.png" alt="Retorno get exibir cliente parte 1">
+                                 <img src="../../assets/2_get_exibirclient_2.png" alt="Retorno get exibir cliente parte 2">
+                                 <img src="../../assets/2_get_exibirclient_3.png" alt="Retorno get exibir cliente parte 3">
+                                 <img src="../../assets/2_get_exibirclient_4.png" alt="Retorno get exibir cliente parte 4">
                              </div>
                             </div>
                          </div>
@@ -291,60 +297,108 @@
                               <ul class="fieldsList">
                                   <h3>Campos requeridos</h3>
                                   <li>
-                                      <strong>token:</strong>
+                                      <strong>address.*.xName:</strong>
                                       <span>String</span>
                                   </li>
                                   <li>
-                                      <strong>descricao:</strong>
+                                      <strong>address.*.description:</strong>
                                       <span>String</span>
                                   </li>
                                   <li>
-                                      <strong>assunto:</strong>
-                                      <span>String</span>
-                                  </li>
-                                  <li>
-                                     <strong>anexos:</strong>
-                                     <span>File</span>
+                                     <strong>address.*.zip:</strong>
+                                     <span>String</span>
                                  </li>
+                                 <li>
+                                    <strong>address.*.street:</strong>
+                                    <span>String</span>
+                                </li>
+                                <li>
+                                    <strong>address.*.number:</strong>
+                                    <span>String</span>
+                                </li>
+                                <li>
+                                    <strong>address.*.district:</strong>
+                                    <span>String</span>
+                                </li>
+                                <li>
+                                    <strong>address.*.city:</strong>
+                                    <span>String</span>
+                                </li>
+                                <li>
+                                    <strong>address.*.state:</strong>
+                                    <span>String</span>
+                                </li>
+                                <li>
+                                    <strong>address.*.country:</strong>
+                                    <span>String</span>
+                                </li>
+                                <li>
+                                    <strong>address.*.country:</strong>
+                                    <span>String</span>
+                                </li>
+                                <li>
+                                    <strong>contact.*.xName:</strong>
+                                    <span>String</span>
+                                </li>
+                                <li>
+                                    <strong>contact.*.cel:</strong>
+                                    <span>String</span>
+                                </li>
+                                <li>
+                                    <strong>contact.*.celNet:</strong>
+                                    <span>String</span>
+                                </li>
+                                <li>
+                                    <strong>contact.*.email:</strong>
+                                    <span>String</span>
+                                </li>
                               </ul>
                               <ul class="fieldsList">
                                   <h3>Todos os campos</h3>
                                   <li>
-                                      <strong>nome:</strong>
+                                      <strong>cnpjCpf:</strong>
                                       <span>String</span>
                                   </li>
                                   <li>
-                                    <strong>email:</strong>
+                                    <strong>xName:</strong>
                                       <span>String</span>
                                   </li>
                                   <li>
-                                    <strong>idcliente:</strong>
+                                    <strong>address.*.complement:</strong>
                                       <span>String</span>
                                   </li>
                                   <li>
-                                    <strong>cpf_cnpj:</strong>
+                                    <strong>ie:</strong>
                                     <span>String</span>
                                   </li>
                                   <li>
-                                      <strong>Contato_email:</strong>
+                                      <strong>idIe:</strong>
                                       <span>String</span>
                                   </li>
                                   <li>
-                                      <strong>Contato_nome:</strong>
+                                      <strong>idClientProvider:</strong>
                                       <span>String</span>
                                   </li>
                                   <li>
-                                      <strong>Token:</strong>
+                                      <strong>idClientProviderAddress:</strong>
                                       <span>String</span>
                                   </li>
+                                  <li>
+                                    <strong>idContact:</strong>
+                                    <span>String</span>
+                                </li>
                               </ul>
 
-                              <p>Usamos como parâmetro para identificar o usuário em ordem os campos: email, idcliente, cpf_cnpj, na ausência resultará em um erro.</p>
+                              <!-- <p>Usamos como parâmetro para identificar o usuário em ordem os campos: email, idcliente, cpf_cnpj, na ausência resultará em um erro.</p> -->
                               
                               <div class="apiResponses d-flex flex-column ">
                                   <h3>Retornos HTTP:</h3>
                                   <h4 class="text-success">200</h4>
-                                  <img src="../../assets/scrn_create_chamados.png" alt="Retorno da chamada">
+                                  <p>Retorna 1 se tiver campo atualizado.</p>
+                                  <img src="../../assets/3_put_update_cliente_1.png" alt="Retorno da chamada">
+                                  <br><br>
+                                  <p>Se não tive campo atualizado, retorna 0.</p>
+                                  <img src="../../assets/3_put_update_cliente_2.png" alt="Retorno da chamada">
                               </div>
               
                              </div>
@@ -375,7 +429,9 @@
                              <div class="apiResponses d-flex flex-column ">
                                  <h3>Retornos HTTP:</h3>
                                  <h4 class="text-success">200</h4>
-                                 <img src="../../assets/scrn_get_events.png" alt="Retorno da chamada">
+                                 <img src="../../assets/4_get_exibir_produtos_1.png" alt="Retorno da chamada">
+                                 <img src="../../assets/4_get_exibir_produtos_2.png" alt="Retorno da chamada">
+                                 <img src="../../assets/4_get_exibir_produtos_3.png" alt="Retorno da chamada">
                              </div>
                                 <h3>Retornos</h3>
                                 <p>
