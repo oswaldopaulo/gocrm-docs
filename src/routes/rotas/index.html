@@ -115,121 +115,10 @@
                                     </svg>
                             </div>
                             <div class="closed" id="create-clients-body">
-                             <ul class="fieldsList">
-                                 <h3>Campos requeridos</h3>
-                                 <li>
-                                     <strong>nome:</strong>
-                                     <span>String</span>
-                                 </li>
-                                 <li>
-                                     <strong>contato_email:</strong>
-                                     <span>String</span>
-                                 </li>
-                                 <li>
-                                     <strong>contato_nome:</strong>
-                                     <span>String</span>
-                                 </li>
-                                 <li>
-                                     <strong>Token:</strong>
-                                     <span>String</span>
-                                 </li>
-                        
-                             </ul>
-                             <ul class="fieldsList">
-                                 <h3>Todos os campos</h3>
-                                 <li>
-                                     <strong>nome:</strong>
-                                     <span>String</span>
-                                 </li>
-                                 <li>
-                                     <strong>token:</strong>
-                                     <span>String</span>
-                                 </li>
-                                 <li>
-                                     <strong>fone:</strong>
-                                     <span>String</span>
-                                 </li>
-                                 <li>
-                                     <strong>celular:</strong>
-                                     <span>String</span>
-                                 </li>
-                                 <li>
-                                    <strong>rua:</strong>
-                                    <span>String</span>
-                                </li>
-                                <li>
-                                    <strong>numero:</strong>
-                                    <span>Number</span>
-                                </li>
-                                <li>
-                                    <strong>bairro:</strong>
-                                    <span>String</span>
-                                </li>
-                                <li>
-                                    <strong>cep_end:</strong>
-                                    <span>String</span>
-                                </li>
-                                <li>
-                                    <strong>cidade:</strong>
-                                    <span>String</span>
-                                </li>
-                                <li>
-                                    <strong>uf:</strong>
-                                    <span>String</span>
-                                </li>
-                                <li>
-                                    <strong>cpf_cnpj:</strong>
-                                    <span>String</span>
-                                </li>
-                                <li>
-                                    <strong>contato_email:</strong>
-                                    <span>String</span>
-                                </li>
-                                <li>
-                                    <strong>contato_nome:</strong>
-                                    <span>Array</span>
-                                </li>
-                                <li>
-                                    <strong>contato_email.*:</strong>
-                                    <span>String</span>
-                                </li>
-                                <li>
-                                    <strong>contato_nome.*:</strong>
-                                    <span>String</span>
-                                </li>
-                                <li>
-                                    <strong>contato_ramal:</strong>
-                                    <span>Array</span>
-                                </li>
-                                <li>
-                                    <strong>contato_ramal.*:</strong>
-                                    <span>String</span>
-                                </li>
-                                <li>
-                                    <strong>contato_telefone:</strong>
-                                    <span>Array</span>
-                                </li>
-                                <li>
-                                    <strong>contato_telefone.*:</strong>
-                                    <span>String</span>
-                                </li>
-                                <li>
-                                    <strong>endereco_descricao:</strong>
-                                    <span>Array</span>
-                                </li>
-                                <li>
-                                    <strong>endereco_descricao.*:</strong>
-                                    <span>String</span>
-                                </li>
-                                <li>
-                                    <strong>endereco_cep:</strong>
-                                    <span>Array</span>
-                                </li>
-                                <li>
-                                    <strong>endereco_cep.*:</strong>
-                                    <span>String</span>
-                                </li>
-                             </ul>
+                             <div>
+                                <br>
+                                <p>Faz a busca de todos os clientes.</p>
+                             </div>
                              
                              <div class="apiResponses d-flex flex-column ">
                                  <h3>Retornos HTTP:</h3>
@@ -259,18 +148,13 @@
                              <ul class="fieldsList">
                                  <h3>Query params</h3>
                                  <li>
-                                     <strong>type:</strong>
+                                     <strong>ID:</strong>
                                      <span>
                                         String
                                     </span>
                                  </li>
-                                 <li>
-                                    <strong>query:</strong>
-                                    <span>String</span>
-                                 </li>
                              </ul>
-                             <p>Os valores do campo type podem ser: <strong>email, id, cpf_cnpj</strong>, Permitindo fazer buscas especificas no banco de dados.</p>
-                             <p>Caso type seja omitido a busca padrão é por email, com retorno variado de local ou bling para onde o usuário está cadastrado.</p>
+                             <p>Utilizamos IDs dos clientes como parametro de busca.</p>
                              <div class="apiResponses d-flex flex-column ">
                                  <h3>Retornos HTTP:</h3>
                                  <h4 class="text-success">200</h4>
