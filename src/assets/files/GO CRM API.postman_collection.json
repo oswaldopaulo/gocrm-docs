@@ -1,0 +1,248 @@
+{
+	"info": {
+		"_postman_id": "30cef09e-dce0-4763-8ac5-97242b950a39",
+		"name": "GO CRM API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32883285",
+		"_collection_link": "https://www.postman.com/sndesk/workspace/go-crm-api/collection/32883285-30cef09e-dce0-4763-8ac5-97242b950a39?action=share&source=collection_link&creator=32883285"
+	},
+	"item": [
+		{
+			"name": "Gerando Token",
+			"item": [],
+			"description": "- Entre em sua conta de adminstrador do GO CRM e acesse o painel **GERENCIAMENTO->Configurações->Conf. API**\n    \n\n<img src=\"https://content.pstmn.io/1c0c300a-93e3-4d2d-b97a-cd43f099911c/dG9rZW4gY3JtLnBuZw==\">\n\n[https://SEUDOMINIO.gocrm.com.br/conf-api](https://dev03.gocrm.com.br/conf-api)\n\n- Clique em **+Adicionar Token**\n    \n\n<img src=\"https://content.pstmn.io/821440dc-818e-4711-bb31-73fa400895dd/dG9rZW4gY3JtIDIucG5n\">\n\n- Escolha as permissões de leitura e gravação, deixando negado ou autorizado para as respectivas ações nos módulos selecionados.\n    \n\n<img src=\"https://content.pstmn.io/d222e027-629f-40c4-9eb2-ae917b00c1f6/YXBpIGNybSAzLnBuZw==\">\n\n- Após isso, é so salvar e você terá seu tokene para utilizar em suas aplicações."
+		},
+		{
+			"name": "Exibir Clientes",
+			"item": [
+				{
+					"name": "api/clients",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "SEU TOKEN",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://SEUDOMINIO.gocrm.com.br/api/clients",
+							"protocol": "https",
+							"host": [
+								"SEUDOMINIO",
+								"gocrm",
+								"com",
+								"br"
+							],
+							"path": [
+								"api",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "O endpoint {{sua base url}}**/api/clients** exibe todos os clientes de forma resumida.\n\n## Retorno\n\n- **idClientProvider:** Number\n    \n- **xName:** String\n    \n- **cnpjCpf:** String\n    \n- **ie:** String\n    \n- **idIe:** Number\n    \n- **phone:** String\n    \n- **phoneNet:** Number\n    \n- **created_at:** Timestamp\n    \n- **updated_at:** Timestamp"
+		},
+		{
+			"name": "Exibir Cliente",
+			"item": [
+				{
+					"name": "api/client/{id}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "SEU TOKEN",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://SEUDOMINIO.gocrm.com.br/api/client/{id}",
+							"protocol": "https",
+							"host": [
+								"SEUDOMINIO",
+								"gocrm",
+								"com",
+								"br"
+							],
+							"path": [
+								"api",
+								"client",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "O endpoint {{sua base url}}**/api/client/{id}** exibe um cliente de maneira detalhada.\n\n# Campo obrigatório\n\n- **id:** Number\n    \n\n## Retorno\n\n- **idClientProvider:** Number\n    \n- **idClientProviderAddress:** Number\n    \n- **idContact:** Number\n    \n- **xName:** String\n    \n- **cnpjCpf:** String\n    \n- **idIe:** Number\n    \n- **ie:** String\n    \n- **phone:** String\n    \n- **phoneNet:** Number\n    \n- **contactName:** String\n    \n- **contactEmail:** String\n    \n- **contactCel:** String\n    \n- **celNet:** Number\n    \n- **zip:** String\n    \n- **street:** String\n    \n- **number:** String\n    \n- **district:** String\n    \n- **city:** String\n    \n- **state:** String\n    \n- **country:** String\n    \n- **complement:** String\n    \n- **addressName:** String\n    \n- **addressDescription:** String\n    \n- **created_at:** Timestamp\n    \n- **updated_at:** Timestamp\n    \n- **addresses:**\n    \n    - **idClientProvider:** Number\n        \n    - **xName:** String\n        \n    - **description:** String\n        \n    - **zip:** String\n        \n    - **street:** String\n        \n    - **number:** String\n        \n    - **district:** String\n        \n    - **city:** String\n        \n    - **state:** String\n        \n    - **country:** String\n        \n    - **complement:** String\n        \n    - **created_at:** Timestamp\n        \n    - **updated_at:** Timestamp\n        \n- **contact:**\n    \n    - **xName:** String\n        \n    - **cel:** String\n        \n    - **celNet:** Number\n        \n    - **celExtension:** String\n        \n    - **email:** String"
+		},
+		{
+			"name": "Update Cliente",
+			"item": [
+				{
+					"name": "api/update/clients",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "SEU TOKEN",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://SEUDOMINIO.gocrm.com.br/api/client/update",
+							"protocol": "https",
+							"host": [
+								"SEUDOMINIO",
+								"gocrm",
+								"com",
+								"br"
+							],
+							"path": [
+								"api",
+								"client",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "O endpoint {{sua base url}}**/api/update/clients** atualiza um cliente.\n\n## Campos necessários\n\n- **xName:** String|required|max:200\n    \n- **cnpjCpf:** String|required\n    \n- **ie:** String|max:20|nullable\n    \n- **idIe:** String|nullable|array\n    \n- **Addresses:**\n    \n    - **xName:** String|required|min:3|max:80\n        \n    - **description:** String|required|max:250\n        \n    - **zip:** String|required|max:20\n        \n    - **street:** String|required|max:255\n        \n    - **number:** String|required|max:20\n        \n    - **district:** String|required|max:250\n        \n    - **city:** String|required|max:250\n        \n    - **state:** String|required|max:20\n        \n    - **country:** String|required|max:4\n        \n    - **complement:** String|max:300\n        \n- **Contact:**\n    \n    - **xName:** String|required|min:3|max:80\n        \n    - **cel:** String|required|max:100\n        \n    - **celNet:** String|required|in:1,2,3\n        \n    - **email:** String|required|max:255"
+		},
+		{
+			"name": "Exibir Produtos",
+			"item": [
+				{
+					"name": "api/products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "SEU TOKEN",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://SEUDOMINIO.gocrm.com.br/api/products",
+							"protocol": "https",
+							"host": [
+								"SEUDOMINIO",
+								"gocrm",
+								"com",
+								"br"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "O endpoint {{sua base url}}**/api/products** lista todos os produtos de maneira resumida.\n\n# Possíveis parâmetros (search)\n\n- **xName:** String\n    \n- **description:** String\n    \n- **valueCost:** Float\n    \n- **xValue:** Float\n    \n\n## Retorno\n\n- **xName:** String\n    \n- **description:** String\n    \n- **idTax:** Number\n    \n- **valueCost:** Float\n    \n- **xValue:** Float"
+		},
+		{
+			"name": "Exibir Produto",
+			"item": [
+				{
+					"name": "api/product/{id}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "SEU TOKEN",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://SEUDOMINIO.gocrm.com.br/api/product/{id}",
+							"protocol": "https",
+							"host": [
+								"SEUDOMINIO",
+								"gocrm",
+								"com",
+								"br"
+							],
+							"path": [
+								"api",
+								"product",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "O endpoint {{sua base url}}**/api/product/{id}** exibe um produto de maneira detalhada.\n\n# Campo obrigatório\n\n- **id_product:** Number\n    \n\n## Retorno\n\n- **name:** String\n    \n- **description:** String\n    \n- **bonus:** Number\n    \n- **prodServ:** String\n    \n- **recurrent:** Number\n    \n- **category:** Number\n    \n- **model:** Number\n    \n- **brand:** Number\n    \n- **type_tax:** String\n    \n- **tax:** Number\n    \n- **valueCost:** Number\n    \n- **value:** Number\n    \n- **created:** Timestamp\n    \n- **updated:** Timestamp"
+		},
+		{
+			"name": "Update Produto",
+			"item": [
+				{
+					"name": "api/update/product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "SEU TOKEN",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://SEUDOMINIO.gocrm.com.br/api/product/update",
+							"protocol": "https",
+							"host": [
+								"SEUDOMINIO",
+								"gocrm",
+								"com",
+								"br"
+							],
+							"path": [
+								"api",
+								"product",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "O endpoint {{sua base url}}**/api/update/product** faz a atualização de um produto.\n\n## Campos necessários\n\n- **xName:** String|required|max:150\n    \n- **description:** String|min:3|max:2000|nullable\n    \n- **idBonus:** Number|in:1,2|nullable\n    \n- **idProdServidProServRecurrent:** Number|in:1,2|nullable\n    \n- **idCategory:** Number|in:1,2|nullable\n    \n- **idTax:** Number|required|exists\n    \n- **valueCost:** Float|required|regex:/^\\\\d+(\\\\.\\\\d{1,2})?$/\n    \n\n|max:99999999999999.99|nullable\n\n- **xValue:** Float|required|regex:/^\\\\d+(\\\\.\\\\d{1,2})?$/\n    \n\n|max:99999999999999.99|nullable\n\n- **idBrand:** Number|required|exists|nullable\n    \n- **idModel:** Number|exists|max:99999999999\n    \n- **idReference:** String|max:20\n    \n- **codEANGTINUPC:** String|max:20"
+		}
+	]
+}
