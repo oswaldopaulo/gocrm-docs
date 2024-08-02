@@ -117,7 +117,7 @@
                             <div class="closed" id="create-clients-body">
                              <div>
                                 <br>
-                                <p>Faz a busca de todos os clientes.</p>
+                                <p>Exibe todos os clientes de forma resumida.</p>
                              </div>
                              
                              <div class="apiResponses d-flex flex-column ">
@@ -148,13 +148,13 @@
                              <ul class="fieldsList">
                                  <h3>Query params</h3>
                                  <li>
-                                     <strong>ID:</strong>
+                                     <strong>id:</strong>
                                      <span>
-                                        String
+                                        Number
                                     </span>
                                  </li>
                              </ul>
-                             <p>Utilizamos IDs dos clientes como parametro de busca.</p>
+                             <p>Exibe um cliente de maneira detalhada, especificando seu ID como parametro de busca.</p>
                              <div class="apiResponses d-flex flex-column ">
                                  <h3>Retornos HTTP:</h3>
                                  <h4 class="text-success">200</h4>
@@ -178,6 +178,8 @@
                                 </svg>
                              </div>
                              <div class="closed" id="create-calling-body">
+                                <br>
+                              <p>Faz a atualização de um cliente.</p>
                               <ul class="fieldsList">
                                   <h3>Campos requeridos</h3>
                                   <li>
@@ -302,7 +304,7 @@
                             <div class="closed" id="get-events-body">
                                 <div>
                                     <br>
-                                    <p>Faz a busca de todos os produtos.</p>
+                                    <p>Faz listagem de todos os produtos de maneira resumida.</p>  
                                 </div>
                              
                              <div class="apiResponses d-flex flex-column ">
@@ -314,10 +316,8 @@
                              </div>
                                 <h3>Retornos</h3>
                                 <p>
-                                    Retorna informações de cada agenda para o chamado, contendo dados como: <b>idgoogle</b> onde verifica se a agenda está conectada ao Google.
-                                </p>
-                                <p>
-                                    Também contém o campo <b>idfilhos</b> onde verifica se o chamado é um chamado filho, ou seja, se este chamado está relacionado a outro chamado principal.
+                                    Retorna a lista de todos os produtos cadastrados contendo dados como 
+                                    nome, descrição, valor e mais algumas informações.
                                 </p>
                             </div>
                          </div>
@@ -342,7 +342,10 @@
                                  </li>
                              </ul>
 
-                             <p>Utilizamos o ID do produto como parametro de busca</p>
+                             <p>
+                                Exibe um produto de maneira detalhada, especificando seu ID como 
+                                parametro de busca.
+                            </p>
                              
                              <div class="apiResponses d-flex flex-column ">
                                  <h3>Retornos HTTP:</h3>
@@ -366,6 +369,8 @@
                                     </svg>
                             </div>
                             <div class="closed" id="get-statuslist-body">
+                                <br>
+                              <p>Faz a atualização de um produto.</p>
                                 <ul class="fieldsList">
                                     <h3>Campos requeridos</h3>
                                     <li>
@@ -374,23 +379,23 @@
                                     </li>
                                     <li>
                                         <strong>idCategory:</strong>
-                                        <span>String</span>
+                                        <span>Number</span>
                                     </li>
                                     <li>
                                         <strong>idTax:</strong>
-                                        <span>String</span>
+                                        <span>Number</span>
                                     </li>
                                     <li>
                                         <strong>valueCost:</strong>
-                                        <span>String</span>
+                                        <span>Float</span>
                                     </li>
                                     <li>
                                         <strong>xValue:</strong>
-                                        <span>String</span>
+                                        <span>Float</span>
                                     </li>
                                     <li>
                                         <strong>idBrand:</strong>
-                                        <span>String</span>
+                                        <span>Number</span>
                                     </li>
                                 </ul>
 
@@ -402,7 +407,7 @@
                                     </li>
                                     <li>
                                         <strong>idBonus:</strong>
-                                        <span>String</span>
+                                        <span>Number</span>
                                     </li>
                                     <li>
                                         <strong>idProdServ:</strong>
@@ -410,11 +415,11 @@
                                     </li>
                                     <li>
                                         <strong>idProServRecurrent:</strong>
-                                        <span>String</span>
+                                        <span>Number</span>
                                     </li>
                                     <li>
                                         <strong>idModel:</strong>
-                                        <span>String</span>
+                                        <span>Number</span>
                                     </li>
                                     <li>
                                         <strong>idReference:</strong>
@@ -508,7 +513,7 @@
                             <p>
                                 Para testes e maiores informações acesse nosso repositório no Postman.
                                 <a  href="https://www.postman.com/sndesk/workspace/sndesk-api/collection/32883285-218bd5e4-834c-485b-aa2b-fb8df8432e59?action=share&creator=32883285" target="_blank" style="text-decoration-line: none!important;">
-                                    SNDesk Postman
+                                    GO CRM Postman
                                 </a>
                             </p>
                         </div>
